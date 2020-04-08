@@ -10,7 +10,6 @@ const defaultProps = { success: false };
  * Factory function to create  a shallowWrapper for the App component.
  * @function setup
  * @param {Object} props - component props specific to this setup.
- * @param {Object} state - initial state for the setup.
  * @return {ShallowWrapper}
  */
 const setup = (props={}) => {
