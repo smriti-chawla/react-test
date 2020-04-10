@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import GuessedWords from './GuessedWords';
+import Congrats from './Congrats';
+
 class App extends React.Component {
   state = {
     counter: 0,
@@ -18,7 +21,7 @@ class App extends React.Component {
     if( this.state.counter == 0 ) {
       this.setState((prevState) => ({
         initialLoad: false,
-      }))
+      }));
       return;
     };
     this.setState((prevState) => ({
@@ -27,13 +30,10 @@ class App extends React.Component {
     }))
   };
   render() {
-    return <div data-test="component-app">
-      <h1 data-test="counter-display">The counter is currently {this.state.counter}.</h1>
-      {this.state.counter === 0 && !this.state.initialLoad &&
-        <h1 data-test="counter-error" style={{color: "red"}}>The counter can't go below zero.</h1>
-      }
-      <button data-test="increment-button" onClick={this.incrementCounter}>Increment Counter</button>
-      <button data-test="decrement-counter" onClick={this.decrementCounter}>Decrement Counter</button>
+    return <div className="container" data-test="component-app">
+      <h1>Jotto</h1>
+      <Congrats success={true} />
+      <GuessedWords guessedWords={[{ guessedWord: 'train',letterMatchCount: 3 }]} />
     </div>
   }
 }

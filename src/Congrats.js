@@ -12,7 +12,8 @@ import PropTypes from 'prop-types';
  * @return {JSX.Element} - Rendered component or Null
  */
 const Congrats = ((props)=>{
-    return <div data-test="component-congrats">{props.success ? 'Congratulations! You guessed the word!': ''}</div>
+    return <div className={props.success ?"alert alert-success" : ""}
+                data-test="component-congrats">{props.success ? 'Congratulations! You guessed the word!': ''}</div>
 });
 
 Congrats.propTypes = {
