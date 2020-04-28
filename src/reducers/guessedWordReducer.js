@@ -7,10 +7,10 @@ import { actionTypes} from "../actions";
  * @return {boolean} - new guessedWords state.
  */
 
-export default (state= false, action) => {
+export default (state= [], action) => {
     switch (action.type) {
         case (actionTypes.GUESS_WORD):
-            return true;
+            return [...state, action.payload];
         default:
             return state;
     }
