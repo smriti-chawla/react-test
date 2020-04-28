@@ -15,7 +15,7 @@ describe('correctGuess', () => {
 
 describe('getSecretWord action creator', function () {
     beforeEach(() => {
-        moxios.install(); // if moxios instance present import and pass as argument
+        moxios.install(); // if axios instance present import and pass as argument
     });
     afterEach(() => {
         moxios.uninstall()
