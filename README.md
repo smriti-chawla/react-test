@@ -66,3 +66,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+Note:
+Jest parallelizes test runs and it doesn't know upfront which tests it should run and which it shouldn't run. This means when you use "fit", it will only run one test in that file but still run all other test files in your project.
+
+fit, fdescribe and it.only, describe.only have the same purpose, skip other tests, run only me.
+
+
+
+
